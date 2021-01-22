@@ -3,13 +3,12 @@
 // kilometerToMeter
 
 function kilometerToMeter(kilometer) {
-  if (kilometer == 0) {
-    console.log("Invalid");
-  } else {
+  if (kilometer > 0) {
     var meter = kilometer * 1000;
-
-    return meter;
+  } else {
+    console.log("Invalid");
   }
+  return meter;
 }
 var result = kilometerToMeter(1000);
 console.log(result);
@@ -17,37 +16,44 @@ console.log(result);
 // budgetCalculator
 
 function budgetCalculator(watch, mobile, laptop) {
-  var watchPrice = watch * 50;
-  var mobilePrice = mobile * 100;
-  var laptopPrice = laptop * 500;
+  var watchPrice = 50;
+  var mobilePrice = 100;
+  var laptopPrice = 500;
 
-  var totalAmount = watchPrice + mobilePrice + laptopPrice;
+  if (watch > 0 && mobile > 0 && laptop > 0) {
+    var totalAmount =
+      watch * watchPrice + mobile * mobilePrice + laptop * laptopPrice;
+  } else {
+    console.log("Invalid");
+  }
+
   return totalAmount;
 }
 
-var totalCost = budgetCalculator(10, 5, 3);
+var totalCost = budgetCalculator(4, 6, 9);
 console.log(totalCost);
 
 // hotelCost
 
 function hotelCost(day) {
-  var firstTenDay = 100;
-  var secondTenDay = 80;
-  var thirdTenDay = 50;
-
+  totalCost = 0;
   if (day > 0 && day <= 10) {
-    var totalCost = day * firstTenDay;
-    return totalCost;
+    totalCost = day * 100;
   } else if (day >= 11 && day <= 20) {
-    var totalCost = (day - 10) * secondTenDay + 1000;
-    return totalCost;
+    firstPart = 100 * 10;
+    var remaining = day - 10;
+    secondPart = remaining * 80;
+    totalCost = firstPart + secondPart;
   } else {
-    var totalCost = (day - 20) * thirdTenDay + 1800;
-    return totalCost;
+    var firstPart = 100 * 10;
+    var secondPart = 80 * 10;
+    var remaining = day - 20;
+    var thirdPart = remaining * 50;
+    totalCost = firstPart + secondPart + thirdPart;
   }
+  return totalCost;
 }
-
-var finalAmount = hotelCost(35);
+var finalAmount = hotelCost(45);
 console.log(finalAmount);
 
 // megaFriend
