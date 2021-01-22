@@ -4,7 +4,7 @@
 
 function kilometerToMeter(kilometer) {
   if (kilometer == 0) {
-    return "No number inserted";
+    console.log("Invalid");
   } else {
     var meter = kilometer * 1000;
 
@@ -47,7 +47,7 @@ function hotelCost(day) {
   }
 }
 
-var finalAmount = hotelCost(65);
+var finalAmount = hotelCost(35);
 console.log(finalAmount);
 
 // megaFriend
